@@ -1,0 +1,77 @@
+<div class="container-fluid g-0" id="container">
+    <app-dashboard></app-dashboard>
+    <div class="container my-5" id="equipe">
+        <h1 class="mb-3 text-white">Edit Equipement</h1>
+        <div class="row">
+            <div class="col-6">
+                <form #form="ngForm" (ngSubmit)="updateEquipement()">
+                    <div class="mb-3">
+                        <label for="equipement_ID" class="form-label text-white">ID</label>
+                        <input type="text" class="form-control" id="equipement_ID" readonly name="equipement_ID"
+                            [(ngModel)]="equipementDetails.equipement_ID">
+                    </div>
+                    <div class="mb-3">
+                        <label for="num_Serie" class="form-label text-white">Archivée</label><br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="archivee" id="archivee" value=false [(ngModel)]="equipementDetails.archivee">
+                            <label class="form-check-label text-white" for="archivee">Non</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="archivee" id="archivee" value=true [(ngModel)]="equipementDetails.archivee">
+                            <label class="form-check-label text-white" for="archivee">Oui</label>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="num_Serie" class="form-label text-white">Num Série</label>
+                        <input type="text" class="form-control" id="num_Serie" name="num_Serie"
+                            [(ngModel)]="equipementDetails.num_Serie" name="num_Serie" required maxlength="10" #num_SerieVar= "ngModel" [ngClass]="{'is-invalid': num_SerieVar.touched && !num_SerieVar.valid}">
+                        <div class="invalid-feedback">
+                            <span *ngIf="num_SerieVar.errors?.['required']">
+                                *Entrez le Numéro de Serie*
+                            </span>
+                            <span *ngIf="num_SerieVar.errors?.['maxlength']">
+                                *Maximum 10 charactères*
+                            </span>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="iD_Type" class="form-label text-white">Type d'équipement</label>
+                        <select class="form-select" id="iD_Type" name="iD_Type" [(ngModel)]="equipementDetails.iD_Type" name="iD_Type" required #typeVar= "ngModel" [ngClass]="{'is-invalid': typeVar.touched && !typeVar.valid}">                   
+                            <option *ngFor="let ty of typeequi" value="{{ty.iD_Type}}">{{ty.nom_Type}}</option>
+                        </select>
+                    </div>
+                    <div class="invalid-feedback">
+                        <span *ngIf="typeVar.errors?.['required']">
+                            *Choisissez Un Type d'équipement*
+                        </span>
+                    </div> 
+                    <div class="mb-3">
+                        <label for="num_Marche" class="form-label text-white">Marché</label>
+                        <select class="form-select" id="num_Marche" name="num_Marche" [(ngModel)]="equipementDetails.num_Marche"  name="num_Marche" required #marcheVar= "ngModel" [ngClass]="{'is-invalid': marcheVar.touched && !marcheVar.valid}">                   
+                            <option *ngFor="let mar of marche" value="{{mar.num_Marche}}">{{mar.num_Marche}} - {{mar.date_marche}} - {{mar.fournisseur}}</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            <span *ngIf="marcheVar.errors?.['required']">
+                                *Choisissez Un Marché*
+                            </span>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="iD_Caracteristique" class="form-label text-white">Caractéristique</label>
+                        <select class="form-select" id="iD_Caracteristique" name="iD_Caracteristique" [(ngModel)]="equipementDetails.iD_Caracteristique"name="iD_Caracteristique" required #caracteristiqueVar= "ngModel" [ngClass]="{'is-invalid': caracteristiqueVar.touched && !caracteristiqueVar.valid}">                   
+                            <option *ngFor="let car of caractere" value="{{car.iD_Caracteristique}}">{{car.cpu}} - {{car.memoire_RAM}} - {{car.disque_dur}} - {{car.vitesse}}</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            <span *ngIf="marcheVar.errors?.['required']">
+                                *Choisissez Un Caractéristique*
+                            </span>
+                        </div>
+                    </div><br>
+                    <button type="submit" class="btn btn-primary mr-5">Modifier <i class="bi bi-pencil-square"></i></button>
+                    <button type="button" class="btn btn-danger"
+                        (click)="DeleteEmployee(equipementDetails.equipement_ID)">Supprimer <i class="bi bi-trash3"></i></button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

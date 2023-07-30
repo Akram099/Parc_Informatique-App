@@ -1,0 +1,46 @@
+<div class="container-fluid g-0" id="container">
+    <app-dashboard></app-dashboard>
+    <div class="container my-5" id="mar">
+        <h1 class="mb-3 text-white">Add Marché</h1>
+        <div class="row">
+            <div class="col-6">  
+                <form #form="ngForm" (ngSubmit)="CreateMarche()">
+                    <div class="mb-3">
+                        <label for="date_marche" class="form-label text-white">Date Marché</label><br>
+                        <input type="date" class="form-control" id="date_marche" name="date_marche"
+                            [(ngModel)]="addmarcheRequest.date_marche" name="date_marche" required #datemarcheVar= "ngModel" [ngClass]="{'is-invalid': datemarcheVar.touched && !datemarcheVar.valid}">
+                        <div class="invalid-feedback">
+                            <span *ngIf="datemarcheVar.errors?.['required']">
+                                *Ajouter une Date du Marché*
+                            </span>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="date_reception" class="form-label text-white">Date de Réception</label>
+                        <input type="date" class="form-control" id="date_reception" name="date_reception"
+                            [(ngModel)]="addmarcheRequest.date_reception" name="date_reception" required #datereceptionVar= "ngModel" [ngClass]="{'is-invalid': datereceptionVar.touched && !datereceptionVar.valid}">
+                        <div class="invalid-feedback">
+                            <span *ngIf="datereceptionVar.errors?.['required']">
+                                *Ajouter une Date du Réception*
+                            </span>
+                        </div>
+                    </div>
+                    <div class="mb-3"> 
+                        <label for="fournisseur" class="form-label text-white">Fournisseur</label>
+                        <input type="text" class="form-control" id="fournisseur" name="fournisseur"
+                            [(ngModel)]="addmarcheRequest.fournisseur" name="fournisseur" required maxlength="20" #fournisseurVar= "ngModel" [ngClass]="{'is-invalid': fournisseurVar.touched && !fournisseurVar.valid}">
+                        <div class="invalid-feedback">
+                            <span *ngIf="fournisseurVar.errors?.['required']">
+                                *Entrez le Nom de Fournisseur*
+                            </span>
+                            <span *ngIf="fournisseurVar.errors?.['maxlength']">
+                                *Maximum 20 charactères*
+                            </span>
+                        </div> 
+                    </div><br>
+                    <button type="submit" class="btn btn-success">Ajouter <i class="bi bi-plus-circle"></i></button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

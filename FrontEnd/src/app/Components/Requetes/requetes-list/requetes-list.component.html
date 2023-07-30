@@ -1,0 +1,64 @@
+<div class="container-fluid g-0" id="container">
+    <app-dashboard></app-dashboard>
+    <div class="container my-5" id="req">
+        <h1 class="mb-3 text-white">Requêtes</h1>
+        <input class="form-control" type="search" placeholder="Rechercher" aria-label="Search" [(ngModel)]="term">
+        <br>
+        <table class="table table-hover" *ngIf="Requeteary && Requeteary.length > 0 ">
+            <thead class="table-secondary">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Date Prise en Charge</th>
+                    <th scope="col">Date Clôture</th>
+                    <th scope="col">État de Requête</th>
+                    <th scope="col">Administrateur</th>
+                    <th scope="col">Technicien</th>
+                    <th scope="col">Fonctionnaire</th>
+                    <ng-container *ngIf="role === 'Administrateur' || role === 'Chef Service'">
+                        <th scope="col"> </th>
+                    </ng-container>
+                </tr>
+            </thead>
+            <tbody class="table-group-divider">
+                <tr
+                    *ngFor="let requeteary of Requeteary | FilterPipePipe: term | paginate:{itemsPerPage:8,currentPage:p}">
+                    <th scope="row">{{requeteary.num_Identification}}</th>
+                    <td>{{requeteary.description}}</td>
+                    <td>{{requeteary.date_prise_en_charge | date:'yyyy-MM-dd'}}</td>
+                    <td>{{requeteary.date_cloture | date:'yyyy-MM-dd'}}</td>
+                    <td>
+                        <ng-container
+                            *ngIf=" requeteary.etat_Requete === 'Clôturé' || role === 'Fonctionnaire' || role === 'Administrateur' ">
+                                {{requeteary.etat_Requete}}
+                        </ng-container>
+                        <ng-container *ngIf="role === 'Technicien' || role === 'Chef Service'">
+                            <select *ngIf="requeteary.etat_Requete !== 'Clôturé'" [(ngModel)]="requeteary.etat_Requete"
+                                (ngModelChange)="onOptionChange(requeteary.num_Identification,requeteary.etat_Requete)">
+                                <ng-container *ngIf="role === 'Technicien' || role === 'Chef Service'">
+                                    <option value="Initiale">Initiale</option>
+                                    <option value="En cours">En cours</option>
+                                    <option value="Assigné">Assigné</option>
+                                    <option value="Fait">Fait</option>
+                                </ng-container>
+                                <ng-container *ngIf=" role === 'Chef Service'">
+                                    <option value="Clôturé">Clôturé</option>
+                                </ng-container>>
+                            </select>
+                        </ng-container>
+                    </td>
+                    <td>{{requeteary.administrateur_ID}}</td>
+                    <td>{{requeteary.technicien_ID}}</td>
+                    <td>{{requeteary.fonctionnaire_ID}}</td>
+                    <ng-container *ngIf="role === 'Administrateur' || role === 'Chef Service'">
+                        <td><a [routerLink]="['edit', requeteary.num_Identification]">Edit</a></td>
+                    </ng-container>
+                </tr>
+            </tbody>
+        </table>
+        <p *ngIf="!Requeteary || Requeteary.length <= 0" class="text-white">Aucune Requête Trouvé</p>
+        <div id="paginate">
+            <pagination-controls (pageChange)="p =$event"></pagination-controls>
+        </div>
+    </div>
+</div>

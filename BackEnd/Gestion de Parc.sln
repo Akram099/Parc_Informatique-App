@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33122.133
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gestion de Parc", "Gestion de Parc\Gestion de Parc.csproj", "{9260B0B7-DCA3-4BA8-98EB-AA3A48FBE401}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccessData", "AccessData\AccessData.csproj", "{8D4AE555-72AA-4407-BE04-8CC57C5F9502}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9260B0B7-DCA3-4BA8-98EB-AA3A48FBE401}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9260B0B7-DCA3-4BA8-98EB-AA3A48FBE401}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9260B0B7-DCA3-4BA8-98EB-AA3A48FBE401}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9260B0B7-DCA3-4BA8-98EB-AA3A48FBE401}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D4AE555-72AA-4407-BE04-8CC57C5F9502}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D4AE555-72AA-4407-BE04-8CC57C5F9502}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D4AE555-72AA-4407-BE04-8CC57C5F9502}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D4AE555-72AA-4407-BE04-8CC57C5F9502}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F43C1522-3DDA-4FF0-AD6D-CD5A218E3069}
+	EndGlobalSection
+EndGlobal

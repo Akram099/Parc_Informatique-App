@@ -1,0 +1,59 @@
+<div class="container-fluid g-0" id="container">
+    <app-dashboard></app-dashboard>
+    <div class="container my-5" id="mar">
+        <h1 class="mb-3 text-white">Edit Marché</h1>
+        <div class="row">
+            <div class="col-6">
+                <form #form="ngForm" (ngSubmit)="updateMarche()">
+                    <div class="mb-3">
+                        <label for="num_Marche" class="form-label text-white">ID</label>
+                        <input type="text" class="form-control" id="num_Marche" readonly name="num_Marche"
+                            [(ngModel)]="marchesDetails.num_Marche">
+                    </div>
+                    <div class="mb-3">
+                        <label for="date_marche" class="form-label text-white">Date Marché</label><br>
+                        <input type="datetime" class="form-control" id="date_marche" name="date_marche"
+                            [(ngModel)]="marchesDetails.date_marche" name="date_marche" required maxlength="19" #datemarcheVar= "ngModel" [ngClass]="{'is-invalid': datemarcheVar.touched && !datemarcheVar.valid}">
+                        <div class="invalid-feedback">
+                            <span *ngIf="datemarcheVar.errors?.['required']">
+                                *Ajouter une Date du Marché*
+                            </span>
+                            <span *ngIf="fournisseurVar.errors?.['maxlength']">
+                                *Maximum 19 charactères*
+                            </span>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="date_reception" class="form-label text-white">Date de Réception</label>
+                        <input type="datetime" class="form-control" id="date_reception" name="date_reception"
+                            [(ngModel)]="marchesDetails.date_reception" name="date_reception" required maxlength="19" #datereceptionVar= "ngModel" [ngClass]="{'is-invalid': datereceptionVar.touched && !datereceptionVar.valid}">
+                        <div class="invalid-feedback">
+                            <span *ngIf="datereceptionVar.errors?.['required']">
+                                *Ajouter une Date du Réception*
+                            </span>
+                            <span *ngIf="fournisseurVar.errors?.['maxlength']">
+                                *Maximum 19 charactères*
+                            </span>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="fournisseur" class="form-label text-white">Fournisseur</label>
+                        <input class="form-control" id="fournisseur" name="fournisseur"
+                            [(ngModel)]="marchesDetails.fournisseur" name="fournisseur" required maxlength="20" #fournisseurVar= "ngModel" [ngClass]="{'is-invalid': fournisseurVar.touched && !fournisseurVar.valid}"> 
+                            <div class="invalid-feedback">
+                            <span *ngIf="fournisseurVar.errors?.['required']">
+                                *Entrez le Nom de Fournisseur*
+                            </span>
+                            <span *ngIf="fournisseurVar.errors?.['maxlength']">
+                                *Maximum 20 charactères*
+                            </span>
+                        </div>                            
+                    </div><br>
+                    <button type="submit" class="btn btn-primary mr-5">Modifier <i class="bi bi-pencil-square"></i></button>
+                    <button type="button" class="btn btn-danger"
+                        (click)="DeleteMarche(marchesDetails.num_Marche)">Supprimer <i class="bi bi-trash3"></i></button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

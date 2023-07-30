@@ -1,0 +1,38 @@
+<div class="outer">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="content" style="border-radius: 1rem;">
+                    <div class="card-body p-5 text-center">
+                        <div class="mb-md-2 mt-md-2 pb-4">
+                            
+                            <h1>
+                                <i class="bi bi-person text-white" style="font-size: 120px;"></i>
+                            </h1>
+                            <h2 class="text-white">
+                                BUDGET
+                            </h2>
+                            <p class="text-white-50 mb-5">Entrez votre Nom d'utilisateur & Mot de passe</p>
+
+                            <form [formGroup]="loginForm">
+                                <div class="field" [class.error]="loginForm.controls['username'].dirty && loginForm.hasError('required','username')">
+                                    <span class="fa fa-user"></span>
+                                    <input formControlName="username" type="text" placeholder="Nom d'utilisateur" class="form-control">
+                                    <small *ngIf="loginForm.controls['username'].dirty && loginForm.hasError('required','username') " class="text-danger">*Nom d'utilisateur Obligatoire</small>
+                                </div>
+                                <div class="field" [class.error]="loginForm.controls['password'].dirty && loginForm.hasError('required','password')">
+                                    <span class="fa fa-lock"></span>
+                                    <input formControlName="password" [type]="type" placeholder="Mot de passe" class="form-control">
+                                    <small *ngIf="loginForm.controls['password'].dirty && loginForm.hasError('required','password') " class="text-danger">*Mot de passe Obligatoire</small>
+                                    <span (click)="hideshowPassword()"></span>
+                                </div>
+                                <button (click)="onLogin()" type="submit" class="btn btn-primary btn-lg px-5">LOGIN</button>
+                            </form> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

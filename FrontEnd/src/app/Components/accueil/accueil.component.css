@@ -1,0 +1,46 @@
+.card {
+    width: 300px;
+    padding: 20px;
+    text-align: center;
+    background-color: #093d76;
+    color: #fff;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    margin-top: 160px;
+    margin-bottom: 5px;
+    margin-left: 24px;
+    margin-right: 24px;
+}
+/* FFA500 */
+i {
+    font-size: 40px;
+    color: #ffffff;
+}
+  
+h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+  
+p {
+    font-size: 40px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+#container{
+    height: 653px;
+    margin-top: -10px;
+    background: url(../../../assets/Images/jack-b-ap8bW3b5CVU-unsplash.jpg) no-repeat;
+    background-color:grey;
+    background-blend-mode: multiply;
+    background-size: cover;
+} 
+
+#dash {
+    display: flex;
+    margin: 70px;
+  }
+

@@ -1,0 +1,35 @@
+nav{
+    height: 100%;
+    
+}
+#LOGO{
+    margin-left: 10px;
+    font-weight: bold;
+    color:white;
+
+}
+
+
+.side-nav-button{
+    
+    display: flex;
+    justify-content: center;
+    font-size: 1.5em;
+    color:white;
+    align-items: center;
+    cursor: pointer;
+    
+    }
+    
+    
+.side-nav-button:hover{
+        background-color: rgba(255,255,255,0.2);
+        border-radius: 30%;
+}
+
+#navbarSupportedContent ul li a{
+    color:white;
+
+
+}
+

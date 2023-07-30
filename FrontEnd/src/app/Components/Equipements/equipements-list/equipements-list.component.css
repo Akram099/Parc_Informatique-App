@@ -1,0 +1,18 @@
+#equipe{
+    padding-top: 65px;
+    margin-left: 100px;
+}
+
+#paginate{
+    margin-top: 30px;
+    margin-left: 38%;
+}
+
+#container{
+    height: 665px;
+    background: url(../../../../assets/Images/jack-b-ap8bW3b5CVU-unsplash.jpg) no-repeat;
+    background-color:grey;
+    background-blend-mode: multiply;
+    background-size: cover;
+}
+

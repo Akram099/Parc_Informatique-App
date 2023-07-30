@@ -1,0 +1,124 @@
+<div class="container-fluid g-0" id="container">
+    <app-dashboard></app-dashboard>
+    <div class="container my-5" id="fonc">
+        <h1 class="mb-3 text-white">Edit Fonctionnaire</h1>
+        <div class="row">
+            <div class="col-6">
+                <form #form="ngForm" (ngSubmit)="updateEmployee()">
+                    <div class="mb-3">
+                        <label for="fonctionnaire_ID" class="form-label text-white">ID</label>
+                        <input type="text" class="form-control" id="fonctionnaire_ID" readonly name="fonctionnaire_ID"
+                            [(ngModel)]="employeeDetails.fonctionnaire_ID">
+                    </div>
+                    <div class="mb-3">
+                        <label for="nom" class="form-label text-white">Nom</label>
+                        <input type="text" class="form-control" id="nom" name="nom" 
+                            [(ngModel)]="employeeDetails.nom" name="nom" required minlength="4" #nomVar= "ngModel" [ngClass]="{'is-invalid': nomVar.touched && !nomVar.valid}">
+                        <div class="invalid-feedback">
+                            <span *ngIf="nomVar.errors?.['required']">
+                                *Entrez le Nom*
+                            </span>
+                            <span *ngIf="nomVar.errors?.['minlength']">
+                                *Minimum 4 charactères*
+                            </span>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="prenom" class="form-label text-white">Prénom</label>
+                        <input type="text" class="form-control" id="prenom" name="prenom"
+                            [(ngModel)]="employeeDetails.prenom" name="prenom" required maxlength="20" #prenomVar= "ngModel" [ngClass]="{'is-invalid': prenomVar.touched && !prenomVar.valid}">
+                        <div class="invalid-feedback">
+                            <span *ngIf="prenomVar.errors?.['required']">
+                                *Entrez le Prénom*
+                            </span>
+                            <span *ngIf="prenomVar.errors?.['maxlength']">
+                                *Maximum 20 charactères*
+                            </span>
+                        </div> 
+                    </div>
+                    <div class="mb-3">
+                        <label for="username" class="form-label text-white">Nom d'utilisateur</label>
+                        <input type="text" class="form-control" id="username" name="username"
+                            [(ngModel)]="employeeDetails.username" name="username" required maxlength="15" #usernameVar= "ngModel" [ngClass]="{'is-invalid': usernameVar.touched && !usernameVar.valid}">
+                        <div class="invalid-feedback">
+                            <span *ngIf="usernameVar.errors?.['required']">
+                                *Entrez le Nom d'utilisateur*
+                            </span>
+                            <span *ngIf="usernameVar.errors?.['maxlength']">
+                                *Maximum 20 charactères*
+                            </span>
+                        </div> 
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label text-white">Mot de passe</label>
+                        <input type="password" class="form-control" id="password" name="password"
+                            [(ngModel)]="employeeDetails.password"  name="password" required minlength="8" #passwordVar= "ngModel" [ngClass]="{'is-invalid': passwordVar.touched && !passwordVar.valid}">
+                        <div class="invalid-feedback">
+                            <span *ngIf="passwordVar.errors?.['required']">
+                                *Entrez le Mot de passe*
+                            </span>
+                            <span *ngIf="passwordVar.errors?.['minlength']">
+                                *Minimum 8 charactères*
+                            </span>
+                        </div> 
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label text-white">E-mail</label>
+                        <input type="email" class="form-control" id="email" name="email"
+                            [(ngModel)]="employeeDetails.email" name="email" required email="" #emailVar= "ngModel" [ngClass]="{'is-invalid': emailVar.touched && !emailVar.valid}">
+                        <div class="invalid-feedback">
+                            <span *ngIf="emailVar.errors?.['required']">
+                                *Entrez le E-mail*
+                            </span>
+                            <span *ngIf="emailVar.errors?.['email']">
+                                *E-mail Invalide*
+                            </span>
+                        </div> 
+                    </div>
+                    <div class="mb-3">
+                        <label for="telephone" class="form-label text-white">Téléphone</label>
+                        <input type="text" class="form-control" id="telephone" name="telephone"
+                            [(ngModel)]="employeeDetails.telephone" name="telephone" required maxlength="10" #telephoneVar= "ngModel" [ngClass]="{'is-invalid': telephoneVar.touched && !telephoneVar.valid}">
+                        <div class="invalid-feedback">
+                            <span *ngIf="telephoneVar.errors?.['required']">
+                                *Entrez le numéro de Téléphone*
+                            </span>
+                            <span *ngIf="telephoneVar.errors?.['maxlength']">
+                                *Entrez des Numéros*
+                            </span>
+                        </div>           
+                    </div>
+                    <div class="mb-3">
+                        <label for="role" class="form-label text-white">Role</label>
+                        <select class="form-select" id="role" name="role" [(ngModel)]="employeeDetails.role" required #roleVar= "ngModel" [ngClass]="{'is-invalid': roleVar.touched && !roleVar.valid}">                   
+                            <option value="Administrateur">Administrateur</option>
+                            <option value="Chef Service">Chef Service</option>
+                            <option value="Technicien">Technicien</option>
+                            <option value="Fonctionnaire">Fonctionnaire</option>
+                        </select>*
+                        <div class="invalid-feedback">
+                            <span *ngIf="roleVar.errors?.['required']">
+                                *Choisissez Un Role*
+                            </span>
+                        </div> 
+                    </div>
+                    <div class="mb-3">
+                        <label for="service_ID" class="form-label text-white">Service ID</label>
+                        <select class="form-select" id="service_ID" name="service_ID" [(ngModel)]="employeeDetails.service_ID" required #serviceVar= "ngModel" [ngClass]="{'is-invalid': serviceVar.touched && !serviceVar.valid}">                   
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            <span *ngIf="serviceVar.errors?.['required']">
+                                *Choisissez Un Service*
+                            </span>
+                        </div> 
+                    </div><br>
+                    <button type="submit" class="btn btn-primary mr-5">Modifier <i class="bi bi-pencil-square"></i></button>
+                    <button type="button" class="btn btn-danger"
+                        (click)="DeleteEmployee(employeeDetails.fonctionnaire_ID)">Supprimer <i class="bi bi-trash3"></i></button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,57 @@
+<div class="container-fluid g-0" id="container">
+    <app-dashboard></app-dashboard>
+    <div class="container my-5" id="req">
+        <h1 class="mb-3 text-white">Add Requête</h1>
+        <div class="row">
+            <div class="col-6">  
+                <form #form="ngForm" (ngSubmit)="CreateRequete()">
+                    <div class="mb-3">
+                        <label for="description" class="form-label text-white">Description</label><br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="description" id="description" value="Soft" checked [(ngModel)]="addrequeteRequest.description">
+                            <label class="form-check-label text-white" for="description">Soft</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="description" id="description" value="Hard" [(ngModel)]="addrequeteRequest.description">
+                            <label class="form-check-label text-white" for="description">Hard</label>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="administrateur_ID" class="form-label text-white">Administrateur</label>
+                        <select class="form-select" id="administrateur_ID" name="administrateur_ID" [(ngModel)]="addrequeteRequest.administrateur_ID" name="administrateur_ID" required #adminVar= "ngModel" [ngClass]="{'is-invalid': adminVar.touched && !adminVar.valid}">                   
+                            <option *ngFor="let adm of arayadmin" value="{{adm.fonctionnaire_ID}}">{{adm.prenom}} {{adm.nom}}</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            <span *ngIf="adminVar.errors?.['required']">
+                                *Choisissez l'Administrateur*
+                            </span>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="technicien_ID" class="form-label text-white">Technicien</label>
+                        <select class="form-select" id="technicien_ID" name="technicien_ID" [(ngModel)]="addrequeteRequest.technicien_ID" name="technicien_ID" required #techVar= "ngModel" [ngClass]="{'is-invalid': techVar.touched && !techVar.valid}">                   
+                            <option *ngFor="let tech of araytech" value="{{tech.fonctionnaire_ID}}">{{tech.prenom}} {{tech.nom}}</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            <span *ngIf="techVar.errors?.['required']">
+                                *Choisissez le Technicien*
+                            </span>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="fonctionnaire_ID" class="form-label text-white">Fonctionnaire</label>
+                        <select class="form-select" id="fonctionnaire_ID" name="fonctionnaire_ID" [(ngModel)]="addrequeteRequest.fonctionnaire_ID" name="administrateur_ID" required #foncVar= "ngModel" [ngClass]="{'is-invalid': foncVar.touched && !foncVar.valid}">                   
+                            <option *ngFor="let fonc of arayfonc" value="{{fonc.fonctionnaire_ID}}">{{fonc.prenom}} {{fonc.nom}}</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            <span *ngIf="foncVar.errors?.['required']">
+                                *Choisissez le Fonctionnaire*
+                            </span>
+                        </div>
+                    </div><br>
+                    <button type="submit" class="btn btn-success">Ajouter <i class="bi bi-plus-circle"></i> </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

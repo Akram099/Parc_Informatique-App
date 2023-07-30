@@ -1,0 +1,40 @@
+<div class="container-fluid g-0" id="container">
+    <app-dashboard></app-dashboard>
+    <div class="container my-5" id="fonc">
+        <h1 class="mb-3 text-white">Fonctionnaires</h1>
+        <input class="form-control" type="search" placeholder="Rechercher" aria-label="Search" [(ngModel)]="term">
+        <br>
+        <table class="table table-hover" *ngIf="fonctionnaires && fonctionnaires.length > 0">
+            <thead class="table-secondary">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nom</th>
+                    <th scope="col">Prenom</th>
+                    <th scope="col">Nom d'utilisateur</th>
+                    <th scope="col">E-mail</th>
+                    <th scope="col">Téléphone</th>
+                    <th scope="col">Role</th>
+                    <th scope="col">Service ID</th>
+                    <th scope="col"> </th>
+                </tr>
+            </thead>
+            <tbody class="table-group-divider">
+                <tr *ngFor="let fonctionnaire of fonctionnaires | FilterPipePipe: term | paginate:{itemsPerPage:8,currentPage:p}">
+                    <th scope="row">{{fonctionnaire.fonctionnaire_ID}}</th>
+                    <td>{{fonctionnaire.nom}}</td>
+                    <td>{{fonctionnaire.prenom}}</td>
+                    <td>{{fonctionnaire.username}}</td>
+                    <td>{{fonctionnaire.email}}</td>
+                    <td>{{fonctionnaire.telephone}}</td>
+                    <td>{{fonctionnaire.role}}</td>
+                    <td>{{fonctionnaire.service_ID}}</td>
+                    <td><a [routerLink]="['edit', fonctionnaire.fonctionnaire_ID]">Edit</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <p *ngIf="!fonctionnaires || fonctionnaires.length <= 0" class="text-white">Aucun Employé(e) Trouvé</p>
+        <div id="paginate">
+            <pagination-controls (pageChange)="p =$event"></pagination-controls>
+        </div>
+    </div>
+</div>

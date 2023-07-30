@@ -1,0 +1,18 @@
+#req{
+    padding-top: 65px;
+    margin-left: 90px;
+}
+
+#container{
+    height: 870px;
+    background: url(../../../../assets/Images/jack-b-ap8bW3b5CVU-unsplash.jpg) no-repeat;
+    background-color:grey;
+    background-blend-mode: multiply;
+    background-size: cover;
+}
+
+button{
+    margin-left: 122px;
+    padding: 10px;
+    font-size: large;
+}

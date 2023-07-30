@@ -1,0 +1,57 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <a class="navbar-brand" id="LOGO">BUDGET</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link active text-white" aria-current="page" href="accueil">
+                    <i class="bi bi-house-door-fill"></i> Accueil
+                </a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="btn btn-dark dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-wrench-adjustable"></i> Requête
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                    <li><a class="dropdown-item text-white" href="requetes">Liste des Requêtes</a></li>
+                    <li><a class="dropdown-item text-white" href="requetes/add">Ajouter Requête</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="btn btn-dark dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-pc-display"></i> Equipement
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                    <li><a class="dropdown-item text-white" href="equipements">Liste d'Equipements</a></li>
+                    <li><a class="dropdown-item text-white" href="equipements/add">Ajouter Equipement</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <button class="btn btn-dark dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-people-fill"></i> Fonctionnaire
+                </button>
+                <ul class="dropdown-menu dropdown-menu-dark"> 
+                    <li><a class="dropdown-item text-white" href="fonctionnaires">Liste des Fonctionnaires</a></li>
+                    <li><a class="dropdown-item text-white" href="fonctionnaires/add">Ajouter Fonctionnaire</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <button class="btn btn-dark dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-bag-fill"></i> Marché
+                </button>
+                <ul class="dropdown-menu dropdown-menu-dark"> 
+                    <li><a class="dropdown-item text-white" href="marchés">Liste des Marchés</a></li>
+                    <li><a class="dropdown-item text-white" href="marchés/add">Ajouter Marché</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    
+    <a class="navbar-brand text-white mb-0 h1">Bonjour, {{fullName}}</a>
+    <button (click)="signout()" class="btn btn-outline-danger">
+        Se Déconnecter <i class="bi bi-box-arrow-right"></i>
+    </button>
+</nav>

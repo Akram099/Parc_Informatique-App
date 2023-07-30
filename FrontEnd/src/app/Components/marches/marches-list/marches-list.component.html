@@ -1,0 +1,36 @@
+<div class="container-fluid g-0" id="container">
+    <app-dashboard></app-dashboard>
+    <div class="container my-5" id="mar">
+        <h1 class="mb-3 text-white">Marchés</h1>
+        <input class="form-control" type="search" placeholder="Rechercher" aria-label="Search" [(ngModel)]="term">
+        <br>
+        <table class="table table-hover" *ngIf="marches && marches.length > 0 ">
+            <thead class="table-secondary">
+                <tr>
+                    <th scope="col"># </th>
+                    <th scope="col">Date Marché</th>
+                    <th scope="col">Date de Réception</th>
+                    <th scope="col">Fournisseur</th>
+                    <ng-container *ngIf="role === 'Administrateur' || role === 'Chef Service'">
+                        <th scope="col"> </th>
+                    </ng-container>
+                </tr>
+            </thead>
+            <tbody class="table-group-divider">
+                <tr *ngFor="let marche of marches | FilterPipePipe: term | paginate:{itemsPerPage:8,currentPage:p}">
+                    <th scope="row">{{marche.num_Marche}}</th>
+                    <td>{{marche.date_marche}}</td>
+                    <td>{{marche.date_reception}}</td>
+                    <td>{{marche.fournisseur}}</td>
+                    <ng-container *ngIf="role === 'Administrateur' || role === 'Chef Service'">
+                        <td><a [routerLink]="['edit', marche.num_Marche]">Edit</a></td>
+                    </ng-container>
+                </tr>
+            </tbody>
+        </table>
+        <p *ngIf="!marches || marches.length <= 0" class="text-white">Aucun Marché Trouvé</p>
+        <div id="paginate">
+            <pagination-controls (pageChange)="p =$event"></pagination-controls>
+        </div>
+    </div>
+</div>

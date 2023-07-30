@@ -1,0 +1,14 @@
+C:\Users\ab\source\repos\Gestion de Parc\AccessData\bin\Debug\net7.0\AccessData.deps.json
+C:\Users\ab\source\repos\Gestion de Parc\AccessData\bin\Debug\net7.0\AccessData.runtimeconfig.json
+C:\Users\ab\source\repos\Gestion de Parc\AccessData\bin\Debug\net7.0\AccessData.dll
+C:\Users\ab\source\repos\Gestion de Parc\AccessData\bin\Debug\net7.0\AccessData.pdb
+C:\Users\ab\source\repos\Gestion de Parc\AccessData\obj\Debug\net7.0\AccessData.csproj.AssemblyReference.cache
+C:\Users\ab\source\repos\Gestion de Parc\AccessData\obj\Debug\net7.0\AccessData.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ab\source\repos\Gestion de Parc\AccessData\obj\Debug\net7.0\AccessData.AssemblyInfoInputs.cache
+C:\Users\ab\source\repos\Gestion de Parc\AccessData\obj\Debug\net7.0\AccessData.AssemblyInfo.cs
+C:\Users\ab\source\repos\Gestion de Parc\AccessData\obj\Debug\net7.0\AccessData.csproj.CoreCompileInputs.cache
+C:\Users\ab\source\repos\Gestion de Parc\AccessData\obj\Debug\net7.0\AccessData.dll
+C:\Users\ab\source\repos\Gestion de Parc\AccessData\obj\Debug\net7.0\refint\AccessData.dll
+C:\Users\ab\source\repos\Gestion de Parc\AccessData\obj\Debug\net7.0\AccessData.pdb
+C:\Users\ab\source\repos\Gestion de Parc\AccessData\obj\Debug\net7.0\AccessData.genruntimeconfig.cache
+C:\Users\ab\source\repos\Gestion de Parc\AccessData\obj\Debug\net7.0\ref\AccessData.dll
