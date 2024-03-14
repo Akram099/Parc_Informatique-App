@@ -1,2 +1,2 @@
-BackEnd : .NET Core WEB API /
-FrontEnd : Angular
+BackEnd: .NET Core WEB API /
+FrontEnd: Angular
