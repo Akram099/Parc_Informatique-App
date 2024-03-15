@@ -1,4 +1,4 @@
-# Nom du Projet
+# Gestion de Parc Informatique
 
 Description courte du projet
 
@@ -38,5 +38,6 @@ Les contributions sont les bienvenues! Pour des changements majeurs, veuillez d'
 [MIT](https://choosealicense.com/licenses/mit/)
 
 ---
-
-<img src="https://upload.wikimedia.org/wikipedia/commons/e/ee/.NET_Core_Logo.svg" alt="Logo .NET" width="400"/> <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Angular_full_color_logo.svg" alt="Logo Angular" width="400"/>
+<div style="text-align:center;">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/e/ee/.NET_Core_Logo.svg" alt="Logo .NET" width="400"/> <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Angular_full_color_logo.svg" alt="Logo Angular" width="400"/>
+</div>
