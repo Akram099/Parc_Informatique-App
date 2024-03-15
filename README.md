@@ -39,5 +39,4 @@ Les contributions sont les bienvenues! Pour des changements majeurs, veuillez d'
 
 ---
 
-[![Logo .NET](https://upload.wikimedia.org/wikipedia/commons/e/ee/.NET_Core_Logo.svg)](https://dotnet.microsoft.com/)
-[![Logo Angular](https://upload.wikimedia.org/wikipedia/commons/c/cf/Angular_full_color_logo.svg)](https://angular.io/)
+<img src="https://upload.wikimedia.org/wikipedia/commons/e/ee/.NET_Core_Logo.svg" alt="Logo .NET" width="200"/> <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Angular_full_color_logo.svg" alt="Logo Angular" width="200"/>
