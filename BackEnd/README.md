@@ -44,4 +44,6 @@ Ce projet est sous licence [MIT](https://choosealicense.com/licenses/mit/).
 
 ---
 
-![Logo .NET](https://upload.wikimedia.org/wikipedia/commons/e/ee/.NET_Core_Logo.svg)
+<div style="text-align:center;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/e/ee/.NET_Core_Logo.svg" alt="Logo .NET" width="500"/> 
+</div>
