@@ -39,5 +39,6 @@ Les contributions sont les bienvenues! Pour des changements majeurs, veuillez d'
 
 ---
 <div style="text-align:center;">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/e/ee/.NET_Core_Logo.svg" alt="Logo .NET" width="400"/> <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Angular_full_color_logo.svg" alt="Logo Angular" width="400"/>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/e/ee/.NET_Core_Logo.svg" alt="Logo .NET" width="400"/> 
+  <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Angular_full_color_logo.svg" alt="Logo Angular" width="400"/>
 </div>
