@@ -1,10 +1,43 @@
-  <tr>
-    BackEnd: .NET Core WEB API
-    FrontEnd: Angular
-  </tr>
-  <td>
-    ![image](https://github.com/Akram099/Parc_Informatique-App/assets/140910985/92428eb8-4ae4-41ec-a21f-f42cd0662c03)
-  </td>
-  <td>
-    ![image](https://github.com/Akram099/Parc_Informatique-App/assets/140910985/a6594fa4-39e8-4235-b39e-3239f88ebe89)
-  </td>
+# Nom du Projet
+
+Description courte du projet
+
+## Technologies Utilisées
+
+- .NET
+- Angular
+
+## Prérequis
+
+Assurez-vous d'avoir les éléments suivants installés avant de continuer :
+
+- [.NET SDK](https://dotnet.microsoft.com/download)
+- [Node.js](https://nodejs.org/)
+- [Angular CLI](https://cli.angular.io/)
+
+## Installation
+
+1. Clonez ce dépôt.
+2. Naviguez vers le répertoire du projet.
+3. Exécutez `dotnet restore` pour restaurer les dépendances .NET.
+4. Naviguez vers le répertoire `ClientApp` et exécutez `npm install` pour installer les dépendances Angular.
+
+## Utilisation
+
+1. Naviguez vers le répertoire du projet.
+2. Exécutez `dotnet run` pour démarrer le serveur .NET.
+3. Dans un autre terminal, naviguez vers le répertoire `ClientApp`.
+4. Exécutez `ng serve` pour démarrer le serveur de développement Angular.
+
+## Contributions
+
+Les contributions sont les bienvenues! Pour des changements majeurs, veuillez d'abord ouvrir un ticket pour discuter de ce que vous aimeriez changer.
+
+## Licence
+
+[MIT](https://choosealicense.com/licenses/mit/)
+
+---
+
+[![Logo .NET](https://upload.wikimedia.org/wikipedia/commons/e/ee/.NET_Core_Logo.svg)](https://dotnet.microsoft.com/)
+[![Logo Angular](https://upload.wikimedia.org/wikipedia/commons/c/cf/Angular_full_color_logo.svg)](https://angular.io/)
